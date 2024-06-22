@@ -1,0 +1,27 @@
+/* Filters */
+.filter {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    padding: 30px 0px;
+    justify-content: center;
+}
+
+.filter__text {
+    font-size: 22px;
+}
+
+.filter__button {
+    border-radius: 15px;
+    padding: 8px 15px;
+    border: none;
+    background-color: rebeccapurple;
+    font-size: 18px;
+    color: rgb(242, 239, 234);
+}
+
+.filter__button:hover {
+    background-color: rgb(160, 84, 235);
+    cursor: pointer;
+}

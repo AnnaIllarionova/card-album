@@ -1,0 +1,80 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    row-gap: 25px;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cards__item {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 350px;
+    background-color: rgb(233, 228, 219);
+    padding-bottom: 20px;
+    
+}
+.cards__item:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.cards__item_image {
+width: 100%;
+height: auto;
+}
+
+.cards__item_text {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cards__icons {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.cards__icons_dislike {
+    fill: transparent;
+    stroke-width: 1px;
+    stroke: rebeccapurple;
+    width: 25px;
+    height: 20px;
+}
+.cards__icons_dislike:hover {
+    stroke-width: 2px;
+}
+
+.cards__icons_like {
+    fill: rebeccapurple;
+    stroke-width: 1px;
+    stroke: rebeccapurple;
+    width: 25px;
+    height: 20px;
+}
+
+.cards__icons_like:hover {
+    stroke: rgb(160, 84, 235);
+}
+.cards__icons_delete {
+    stroke: rebeccapurple;
+    width: 30px;
+    height: 30px;
+}
+
+.cards__icons_delete:hover {
+    stroke: rgb(160, 84, 235);
+    stroke-width: 2px;
+}
