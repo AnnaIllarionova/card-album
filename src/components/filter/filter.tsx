@@ -9,9 +9,12 @@ export const Filter = () => {
   const { data } = useGetAllCardsQuery(undefined);
   const likedArr = useSelector((state: RootState) => state.cards.likedArr);
   const isFiltered = useSelector((state: RootState) => state.cards.isFiltered);
+  const cardsAlbum = useSelector((state: RootState) => state.cards.cardsAlbum);
 
   const handleFilter = () => {
-    dispatch(getFilteredArr({ album: data, likedArr: likedArr }));
+    if (data) {
+    dispatch(getFilteredArr({ album: cardsAlbum, likedArr: likedArr }));
+    }
   };
 
   return (

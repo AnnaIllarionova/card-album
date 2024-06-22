@@ -5,7 +5,7 @@ import "./card-page.css";
 export const CardPage = () => {
   const cardID = useParams();
   const idCard = Number(cardID.cardID);
-  const { data, isLoading, error } = useGetCurrentCardQuery({ id: idCard });
+  const { data, isLoading, error } = useGetCurrentCardQuery( idCard );
 
   return (
     <div className="modal">
@@ -16,9 +16,9 @@ export const CardPage = () => {
           <p className="error">Что-то пошло не так...</p>
         ) : (
           <>
-            <h2 className="modal__card_title">Страница карточки № {data.id}</h2>
-            <img src={data.url} alt="color" className="modal__card_img" />
-            <p className="modal__card_text">{data.title}</p>
+            <h2 className="modal__card_title">Страница карточки № {data && data.id}</h2>
+            <img src={data && data.url} alt="color" className="modal__card_img" />
+            <p className="modal__card_text">{data && data.title}</p>
             <Link to="/">
               <button className="modal__card_button">Вернуться назад</button>
             </Link>
