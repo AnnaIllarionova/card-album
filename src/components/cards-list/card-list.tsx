@@ -25,7 +25,6 @@ interface IOneCard {
 
 export const CardsList = () => {
   const { data, isLoading, error } = useGetAllCardsQuery(undefined);
-  // console.log(data);
   const dispatch = useDispatch();
   const cardsAlbum = useSelector((state: RootState) => state.cards.cardsAlbum);
 
@@ -48,8 +47,6 @@ export const CardsList = () => {
     return <p className="error">Что-то пошло не так...</p>;
   }
 
-  console.log("cardsArr", cardsAlbum);
-  console.log("filteredArr", filteredCards);
 
   return (
     <div className="cards">
@@ -66,7 +63,6 @@ export const CardsList = () => {
 export const OneCard = ({ card }: IOneCard) => {
   const [deleteCard, { isLoading: deleteIsLoading, error: deleteError }] =
     useDeleteCardMutation();
-  // console.log("deleteError", deleteError);
   const dispatch = useDispatch();
   const chosenCard = useSelector((state: RootState) => state.cards.chosenCard);
   const likedArr = useSelector((state: RootState) => state.cards.likedArr);
@@ -87,7 +83,7 @@ export const OneCard = ({ card }: IOneCard) => {
 
     dispatch(setChosenCard(card));
     try {
-      await deleteCard({ id: card.id });
+      await deleteCard(card.id);
       dispatch(deleteChosenCard(card.id));
     } catch (error) {
       console.log(error);
